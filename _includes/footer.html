@@ -1,0 +1,89 @@
+
+
+<div id="msg-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Image Modal -->
+<div id="imgmodal" class="modal" role="dialog" aria-expanded="false">
+    <span class="close">&times;</span>
+    <figure class="modal-content" id="modal-img" role="figure" aria-describedby="caption"></figure>
+    <div id="modal-caption" role="contentinfo"></div>
+</div>
+<noscript>
+    <!-- The No-Script Modal -->
+    <div id="noscript-modal" class="modal" role="dialog" aria-expanded="true" style="display: block; position: fixed; z-index: 1000; padding-top: 100px; left: 0px; top: 0px; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.9); transition: padding-top 100ms ease-out; box-sizing: border-box; font-family: 'Ubuntu', sans-serif, Verdana, Geneva, Tahoma;">
+        <div class="modal-content" style="margin: auto; display: block; width: 80%; max-width: 700px; padding: 40px; background: white; box-sizing: border-box; ;">
+            <h2 class="text-danger mt-1 mb-4" style="color: rgb(236, 78, 32); margin-top: 6px; margin-bottom: 36px; box-sizing: border-box; ;">Important!</h2>
+            <p class="noscript-msg" style="box-sizing: border-box;">
+                This site requires JavaScript. Here are the
+                <a href="https://www.enable-javascript.com/" target="_blank" class="text-primary" style="background-color: transparent; color: rgb(1, 111, 185); box-sizing: border-box; text-decoration: none; ;">
+                    instructions on how to enable JavaScript in your web browser</a>.
+            </p>
+        </div>
+    </div>
+</noscript>
+
+<footer>
+    <div class="container text-white">
+        <div class="row">
+            <div class="col-sm-4 col-xs-12">
+                <p><h2>Project :</h2></p>
+                <p><a target="_blank" href="https://github.com/bunkersem/ksp-part-catalog">Contribute (Github)</a></p>
+                <p><a target="_blank" href="https://wiki.kerbalspaceprogram.com/wiki/Parts">KSP Parts Wiki</a></p>
+                <p><a target="_blank" href="{{ "/LICENSE.md" | absolute_url }}">LICENSE</a></p>
+                <p><a target="_blank" href="{{ "/humans.txt" | absolute_url }}">humans.txt</a></p>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <p><h2>Other :</h2></p>
+                <p><a target="_blank" href="https://bunkersem.github.io/portfolio/">My Portfolio</a></p>
+                <p><a target="_blank" href="https://play.google.com/store/apps/developer?id=EchoSierraStudio">Apps</a></p>
+                <p><a target="_blank" href="https://sketchfab.com/Afirus">Sketchfab</a></p>
+                <p><a target="_blank" href="https://www.sololearn.com/Profile/1157573">SoloLearn</a></p>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <p><h2>Social :<h2></p>
+                <div>{% include social.html %}</div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.3/es6-shim.min.js" integrity="sha256-THlgZSjqt7idNSdnUvGypTuXB5C4hV9kSuPYrbiq19o="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js" integrity="sha256-9p9wUORIjnIRp9PAyZGxql6KgJRNiH04y+8V4JjUhn0="
+    crossorigin="anonymous"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.5/isotope.pkgd.min.js" integrity="sha256-KsHewupnZlPcM8HccYY2Q0NXs1L9B9a/l1DGklAZGrw="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js" integrity="sha256-issEYoOUmTZW2tEfIwKfxq0Tz5DPqh9d+JFQsnJ2hKk="
+    crossorigin="anonymous"></script>
+<script>AOS.init();</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js" integrity="sha256-XqEmjxbIPXDk11mQpk9cpZxYT+8mRyVIkko8mQzX3y8="
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.8.1/dist/i18n/de.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.8.1/dist/i18n/nl.js"></script>
+<script src="{{ "/assets/js/smoothscroll.js" | absolute_url  }}"></script>
+<script src="{{ "/assets/js/util.js" | absolute_url  }}"></script>
+<script src="{{ "/assets/js/compare.js" | absolute_url  }}"></script>
+<script src="{{ "/assets/js/catalog.js" | absolute_url  }}"></script>
+<script src="{{ "/assets/js/main.js" | absolute_url  }}"></script>

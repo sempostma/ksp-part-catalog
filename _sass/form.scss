@@ -1,0 +1,22 @@
+
+
+input[type=email], input[type=text], textarea {
+    background: transparent;
+    appearance: none;
+    border: none;
+    resize: none;
+    border-bottom: 3px solid white;
+    width: 100%;
+    color: white;
+    padding: 14px 5px;
+    font-size: 1.2em;
+}
+
+input[type=email]::placeholder, input[type=text]::placeholder, textarea::placeholder {
+    color: white;
+}
+
+fieldset {
+    width: 600px;
+    max-width: 100%;
+}

@@ -1,0 +1,119 @@
+--- 
+title: Home 
+layout: home 
+---
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="filter-col col-sm-3 nopadding">
+            <aside id="filter-section">
+                <fieldset>
+                    <legend>
+                        <b class="lead">Filter</b>
+                    </legend>
+                    <hr>
+                    <div id="filters" class="button-group form-inline">
+                        <label for="category-filter"><b>Category:</b></label>
+                        <select name="category" id="category-filter" class="filter-control filter-select form-control">
+                            <option selected value="categoryFilterAll">Everything</option>
+                            <option value="categoryFilterAero">Aero</option>
+                            <option value="categoryFilterControl">Control</option>
+                            <option value="categoryFilterPropulsion">Propulsion</option>
+                            <option value="categoryFilterPayload">Payload</option>
+                            <option value="categoryFilterThermal">Thermal</option>
+                            <option value="categoryFilterPods">Pods</option>
+                            <option value="categoryFilterUtility">Utility</option>
+                            <option value="categoryFilterFuelTank">FuelTank</option>
+                            <option value="categoryFilterStructural">Structural</option>
+                            <option value="categoryFilterElectrical">Electrical</option>
+                            <option value="categoryFilterEngine">Engine</option>
+                            <option value="categoryFilterScience">Science</option>
+                            <option value="categoryFilterCommunication">Communication</option>
+                            <option value="categoryFilternone">None</option>
+                            <option value="categoryFilterCoupling">Coupling</option>
+                            <option value="categoryFilterGround">Ground</option>
+                        </select>
+                        <label for="crossfeed-filter"><b>Fuel crossfeed:</b></label>
+                        <select name="crossfeed" id="crossfeed-filter" class="filter-control filter-select form-control">
+                            <option selected value="crossfeedAll">Everything</option>
+                            <option value="crossfeedEnabled">Enabled</option>
+                            <option value="crossfeedDisabled">Disabled</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <hr>
+                <fieldset>
+                    <legend>
+                        <b class="lead">Sort</b>
+                    </legend>
+                    <hr>
+                    <div id="sorts" class="button-group form-inline">
+                        <label class="sr-only" for="sort-original-order">Original order</label>
+                        <button type="button" id="sort-original-order" class="sort-control btn btn-default button is-checked" data-sort-by="original-order">original order</button>
+                        <label class="sr-only" for="sort-original-order">Title</label>
+                        <button type="button" id="sort-title" class="sort-control btn btn-default button" data-sort-by="title">title</button>
+                        <label class="sr-only" for="sort-original-order">Author</label>
+                        <button type="button" id="sort-author" class="sort-control btn btn-default button" data-sort-by="author">author</button>
+                        <label class="sr-only" for="sort-original-order">Entrycost</label>
+                        <button type="button" id="sort-entrycost" class="sort-control btn btn-default button" data-sort-by="entrycost">entrycost</button>
+                        <label class="sr-only" for="sort-original-order">Cost</label>
+                        <button type="button" id="sort-cost" class="sort-control btn btn-default button" data-sort-by="cost">cost</button>
+                        <label class="sr-only" for="sort-original-order">Manufacturer</label>
+                        <button type="button" id="sort-manufacturer" class="sort-control btn btn-default button" data-sort-by="manufacturer">manufacturer</button>
+                        <label class="sr-only" for="sort-original-order">Mass</label>
+                        <button type="button" id="sort-mass" class="sort-control btn btn-default button" data-sort-by="mass">mass</button>
+                        <label class="sr-only" for="sort-original-order">Explosionpotential</label>
+                        <button type="button" id="sort-explosionpotential" class="sort-control btn btn-default button" data-sort-by="explosionpotential">explosionpotential</button>
+                        <label class="sr-only" for="sort-original-order">Categoryr</label>
+                        <button type="button" id="sort-category" class="sort-control btn btn-default button" data-sort-by="category">category</button>
+                        <label class="sr-only" for="sort-order">Order</label>
+                        <select name="order" id="sort-order" class="sort-control sort-order form-control">
+                            <option selected value="ASC">Ascending</option>
+                            <option value="DESC">Descending</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </aside>
+        </div>
+        <div class="col-sm-9 nopadding">
+            <section id="parts-section">
+                <div class="parts-grid-container">
+                    <div class="parts-grid"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<div id="compare-dialog-wrapper">
+    <div id="compare-dialog" role="dialog">
+        <div class="menu-controls">
+            <div class="compare-left">
+                <b>Compare</b>
+            </div>
+            <div role=button id="run-compare" class="compare-control compare-right run-compare" aria-controls="sidebar-wrapper">
+                <i aria-hidden="true" class="fa fa-play"></i>
+                <span class="sr-only">(up/down)</span>
+            </div>
+            <div role="button" id="up-down-compare" class="compare-control compare-right up-down-compare" aria-controls="compare-parts-content">
+                <i aria-hidden="true" class="fa fa-arrow-up"></i>
+                <span class="sr-only">(up/down)</span>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div id="compare-parts-content"></div>
+    </div>
+</div>
+
+<div id="scroll-up" class="down">
+    <a href="#parts-section">
+        <svg width="75" height="75" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+            <rect style="stroke: inherit; stroke-width: inherit;" height="98" width="98" y="1" x="1" fill="none" />
+            <g id="arrow">
+                <line style="stroke: inherit; stroke-width: inherit;" y2="89" x2="50" y1="12" x1="50" />
+                <line style="stroke: inherit; stroke-width: inherit;" transform="rotate(90 62.93,23.76)" y2="11" x2="76" y1="37" x1="50" />
+                <line style="stroke: inherit; stroke-width: inherit;" y2="11" x2="51" y1="37" x1="25" />
+            </g>
+        </svg>
+    </a>
+</div>

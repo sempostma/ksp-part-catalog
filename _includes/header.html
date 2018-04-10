@@ -1,0 +1,96 @@
+{% assign default_paths = site.pages | map: "path" %} {% assign page_paths = site.header_pages | default: default_paths %}
+
+<div class="header-wrapper">
+
+    <div id="banner">
+        <figure id="banner-img"></figure>
+        <script>
+            document.getElementById('banner-img').setAttribute('style', 'background-image: url("https://bunkersem.github.io/portfolio/images/rocket.svg?' 
+                + (new Date()).getTime() + '")');
+        </script>
+        <div id="info-message" class="text-white">
+            New parts coming soon!
+        </div>
+    </div>
+    <div style="height: 50px;">
+        <nav id="navbar" class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ "/" | absolute_url }}">
+                        <img src="{{ "/assets/img/logo.png" | absolute_url }}" alt="Logo">
+                    </a>
+                </div>
+    
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="{% if page.url == " / " %}active{% endif %}">
+                            <a href="/">
+                                Home {% if page.url == "/" %}
+                                <span class="sr-only">(current)</span>{% endif %}
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- <li><a href="#">Link</a></li> -->
+                        {% for item in site.data.menu.root %} {% if item.subfolderitems %}
+                        <li class="dropdown {% if page.url contains item.baseurl %}active{% endif %}">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ item.page }}
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                {% for sub in item.subfolderitems %} {% if sub == "seperator" %}
+                                <li role="separator" class="divider"></li>
+                                {% else %}
+                                <li>
+                                    <a href="{{ sub.url | absolute_url }}">{{ sub.page }}</a>
+                                </li>
+                                {% endif %} {% endfor %}
+                            </ul>
+                        </li>
+                        {% else %}
+                        <li class="{% if page.url contains item.url %}active{% endif %}">
+                            <a href="{{ item.url | absolute_url }}">
+                                {{ item.page }} {% if page.url contains item.url %}
+                                <span class="sr-only">(current)</span>{% endif %}
+                            </a>
+                        </li>
+                        {% endif %} {% endfor %}
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+    <header id="banner-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-7 col-lg-4 col-lg-offset-8">
+                    <div class="banner-full-height">
+                        <h1>Ksp Parts Catalog</h1>
+                        <p>View parts, sort, filter, compare and list parts from Kerbal Space Program</p>
+                        <a href="#parts-section" class="btn btn-primary">View Parts</a>
+                        <a class="btn btn-warning">Support me</a><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="sidebar-wrapper">
+        <div class="sidebar-wrapper-header">
+            <button id="close-sidebar" class="btn btn-danger close-sidebar">X</button>
+        </div>
+        <div class="sidebar-content"></div>
+    </div>
+
+</div>
