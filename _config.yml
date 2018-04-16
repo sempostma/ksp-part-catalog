@@ -19,8 +19,8 @@ tags: KSP Part Catalog Filter Sort
 # phone: 06-12345678
 # email: effie@testmail.com
 description: KSP Part Catalog
-baseurl: 
-url: 
+url: https://ksp-part-catalog.space
+enforce_ssl: ksp-part-catalog.space
 github_username: bunkersem
 youtube_username: 9Wereld
 markdown: kramdown
