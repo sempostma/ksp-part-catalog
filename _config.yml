@@ -16,8 +16,6 @@ collections:
     output: true
 volledige-titel: KSP Part Catalog
 tags: KSP Part Catalog Filter Sort
-# phone: 06-12345678
-# email: effie@testmail.com
 description: KSP Part Catalog
 url: https://ksp-part-catalog.space
 enforce_ssl: ksp-part-catalog.space
