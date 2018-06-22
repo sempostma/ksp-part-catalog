@@ -23,6 +23,7 @@ youtube_username: 9Wereld
 markdown: kramdown
 theme: minima
 plugins: 
+  - jekyll-sitemap
 author:
   name: Sem Postma
   from: Oosterhout, Noord Brabant, The Netherlands
