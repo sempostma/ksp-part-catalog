@@ -15,7 +15,7 @@ collections:
     output: true
 volledige-titel: KSP Part Catalog
 tags: KSP Part Catalog Filter Sort
-description: KSP Part Catalog
+description: View parts, sort, filter, compare and list parts from Kerbal Space Program
 url: https://ksp-part-catalog.space
 enforce_ssl: ksp-part-catalog.space
 github_username: bunkersem
