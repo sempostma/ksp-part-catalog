@@ -2,7 +2,6 @@
 ---
 
 (function () {
-
     window.app = window.app || {};
 
     var $partsGrid = $('.parts-grid');
