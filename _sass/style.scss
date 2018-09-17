@@ -21,14 +21,12 @@ a:hover {
 }
 
 ::-webkit-scrollbar{
-    -webkit-appearance: none;
     width: 11px;
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 6px;
     background-color: rgba(0,0,0,.5); 
-    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 
 legend {
@@ -302,6 +300,7 @@ header#banner-content .full-height {
 header#banner-content .banner-full-height {
     background: rgba(255,255,255,0.5);
     padding: 100px 50px;
+    padding-bottom: 50px;
     height: auto;
 }
 
@@ -489,4 +488,51 @@ footer .social-media-list {
     fill: #fff;
     list-style: none;
     padding-left: 0;
+}
+
+footer .social-media-list a {
+    display: block;
+    margin-top: px;
+}
+
+.header-btn {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 11px;
+    color: #fff!important;
+    vertical-align: top;
+    border-radius: 3px
+}
+
+.header-btn .legend {
+    background-color: #555
+}
+
+.header-btn .legend,.header-btn .paypal {
+    display: inline-block;
+    padding: 0 .5rem;
+    line-height: 20px
+}
+
+.header-btn .paypal {
+    background-color: #007ec6
+}
+
+.github-btn {
+    display: inline-block
+}
+
+#header-btns {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 1000;
+    animation: fadein 300ms ease 2s forwards;
+    transform-origin: center top;
+    transform: scaleY(0);
+}
+
+@keyframes fadein {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
 }

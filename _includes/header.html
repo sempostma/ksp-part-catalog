@@ -1,15 +1,27 @@
-{% assign default_paths = site.pages | map: "path" %} {% assign page_paths = site.header_pages | default: default_paths %}
+{% assign default_paths = site.pages | map: "path" %} {% assign page_paths = site.header_pages | default: default_paths
+%}
 
 <div class="header-wrapper">
 
     <div id="banner">
         <figure id="banner-img"></figure>
         <script>
-            document.getElementById('banner-img').setAttribute('style', 'background-image: url("https://bunkersem.github.io/portfolio/images/rocket.svg?' 
+            document.getElementById('banner-img').setAttribute('style', 'background-image: url("https://bunkersem.github.io/portfolio/images/rocket.svg?'
                 + (new Date()).getTime() + '")');
         </script>
         <div id="info-message" class="text-white">
             New parts coming soon!
+        </div>
+        <div id="header-btns">
+            <a class="github-button" target="_blank" href="https://github.com/LesterGallagher/ksp-part-catalog/subscription" data-icon="octicon-eye"
+                data-show-count="true" aria-label="Watch LesterGallagher/ksp-part-catalog on GitHub">Watch</a>
+            <a class="github-button" target="_blank" href="https://github.com/LesterGallagher/ksp-part-catalog" data-icon="octicon-star"
+                data-show-count="true" aria-label="Star LesterGallagher/ksp-part-catalog on GitHub">Star</a>
+            <!-- Place this tag where you want the button to render. -->
+            <a class="github-button" href="https://github.com/LesterGallagher" data-show-count="true" aria-label="Follow @LesterGallagher on GitHub">Follow
+                @LesterGallagher</a>
+            </span>&nbsp;<a class="header-btn" href="https://www.paypal.me/esstudio" target="_blank"><span class="legend">support</span><span
+                    class="paypal">paypal</span></a>
         </div>
     </div>
     <div style="height: 50px;">
@@ -28,7 +40,7 @@
                         <img src="{{ "/assets/img/logo.png" | absolute_url }}" alt="Logo">
                     </a>
                 </div>
-    
+
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
@@ -43,7 +55,8 @@
                         <!-- <li><a href="#">Link</a></li> -->
                         {% for item in site.data.menu.root %} {% if item.subfolderitems %}
                         <li class="dropdown {% if page.url contains item.baseurl %}active{% endif %}">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ item.page }}
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                aria-expanded="false">{{ item.page }}
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
@@ -79,7 +92,9 @@
                         <h1>Ksp Parts Catalog</h1>
                         <p>View parts, sort, filter, compare and list parts from Kerbal Space Program</p>
                         <a href="#parts-section" class="btn btn-primary">View Parts</a>
-                        <a href="http://bunkersem.github.com/portfolio" class="btn btn-warning">About the Developer</a><br>
+                        <a target="_blank" href="http://bunkersem.github.com/portfolio" class="btn btn-warning">About the Developer</a><br>
+                        <a target="_blank" href="https://www.paypal.me/esstudio" class="btn btn-info">Donate</a><br>
+                        <a target="_blank" href="https://github.com/LesterGallagher/ksp-part-catalog/" class="btn btn-danger">Contribute</a><br>
                     </div>
                 </div>
             </div>
