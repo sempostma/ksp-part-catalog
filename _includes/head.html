@@ -18,7 +18,7 @@
     xmlhttp.send();
   </script>
 
-  <title>{{site.title}} | {{page.title || 'Welcome'}}</title>
+  <title>{{ page.title || site.title }}</title>
   <meta name="author" content="{{ site.author.name }}, {{ site.author.email }}">
   <meta name="designer" content="{{ site.designer.name }}, {{ site.designer.email }}">
   <link rel="author" href="{{ '/humans.txt' | absolute_url }}">
