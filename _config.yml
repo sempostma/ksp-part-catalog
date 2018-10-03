@@ -16,7 +16,8 @@ collections:
     output: true
 volledige-titel: KSP Part Catalog
 tags: KSP Part Catalog Filter Sort
-description: View parts, sort, filter, compare and list parts from Kerbal Space Program
+description: View parts, sort, filter, compare and list parts from Kerbal Space Program.
+  KSP Part Catalog is a list of all parts used to create space planes and rockets in KSP.
 url: https://ksp-part-catalog.space
 enforce_ssl: ksp-part-catalog.space
 github_username: bunkersem
@@ -33,6 +34,7 @@ markdown: kramdown
 theme: minima
 plugins: 
   - jekyll-sitemap
+  - jekyll-seo-tag
 author:
   name: Sem Postma
   from: Oosterhout, Noord Brabant, The Netherlands
