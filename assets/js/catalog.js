@@ -73,7 +73,8 @@
 
     function createPartsElements() {
         console.log('creating parts');
-        var tcats = {}
+        var tcats = {};
+        var frag = document.createDocumentFragment();
         for (var i = 0; i < window.app.parts.length; i++) {
             var part = window.app.parts[i];
             var $item = $(document.createElement('article')).addClass('part-item').attr('id', 'pitem-' + i);
@@ -99,8 +100,9 @@
             part.v.image ? $content.css('background-image', 'url({{ "/assets/img/parts/med/" | absolute_url }}'
                 + escape(part.v.image) + '.png)')
                 : $content.addClass('img-not-found');
-            $partsGrid.append($item);
+                frag.appendChild($item[0])
         }
+        $partsGrid[0].appendChild(frag);
     }
 
     function initializeGrid() {
