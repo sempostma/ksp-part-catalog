@@ -53,9 +53,16 @@
   <meta name="theme-color" content="#ffffff">
 
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | absolute_url }}"> 
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+  
   {% comment %} {% feed_meta %} {% endcomment %} {% if jekyll.environment == 'production' and site.google_analytics %} {%
   include google-analytics.html %} {% endif %}
     
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+  </script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: "ca-pub-123456789",
+  enable_page_level_ads: true
+  });
+  </script>
 </head>
