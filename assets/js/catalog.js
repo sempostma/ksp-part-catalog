@@ -20,13 +20,13 @@
 
     function getPartInfoText(part) {
         return $('<h3 class="title text-warning">' + part.v.title + '</h3>\
-        <div class="view-more-wrapper"><button aria-control="sidebar-wrapper" class="view-more btn btn-danger">View More</button>\
-        <button class="do-compare btn btn-warning">Add</button></div>\
-        <div class="details"><table><tr><td>Author: </td><td class="text-muted">'+part.v.author+'</td></tr>\
-        <tr><td>Category: </td><td class="text-muted">'+part.v.category+'</td></tr>\
-        <tr><td>Cost: </td><td class="text-muted">'+part.v.cost+'</td></tr>\
-        <tr><td>Mass: </td><td class="text-muted">'+part.v.mass+'</td></tr></table></div>\
-        <div>Description: </div><div class="desc text-muted"><small>'+part.v.description+'</small></div>');
+    <div class="view-more-wrapper"><button aria-control="sidebar-wrapper" class="view-more btn btn-danger">View More</button>\
+    <button class="do-compare btn btn-warning">Add</button></div>\
+    <div class="details"><table><tr><td>Author: </td><td class="text-muted">'+ part.v.author + '</td></tr>\
+    <tr><td>Category: </td><td class="text-muted">'+ part.v.category + '</td></tr>\
+    <tr><td>Cost: </td><td class="text-muted">'+ part.v.cost + '</td></tr>\
+    <tr><td>Mass: </td><td class="text-muted">'+ part.v.mass + '</td></tr></table></div>\
+    <div>Description: </div><div class="desc text-muted"><small>'+ part.v.description + '</small></div>');
 
         // <tr><td><b>entryCost:</b></td><td>'+part.v.entryCost+'</td></tr>\
         // <tr><td><b>crashTolerance:</b></td><td>'+part.v.crashTolerance+'</td></tr>\
@@ -46,7 +46,7 @@
                 );
             }
         }
-        for(var j = 0; j < (part.n || []).length; j++) {
+        for (var j = 0; j < (part.n || []).length; j++) {
             $htmlRet.append(createGraph(part.n[j]).addClass('scoped-graph'));
         }
         return $htmlRet;
@@ -63,11 +63,11 @@
         $sidebarWrapper.addClass('open');
         if ($sidebarWrapper.hasClass('open')) {
             $sidebarWrapper.addClass('closing');
-            setTimeout(function(){ $sidebarWrapper.removeClass('closing')}, 200);
+            setTimeout(function () { $sidebarWrapper.removeClass('closing') }, 200);
         }
     }
 
-    $('#close-sidebar').on('click', function() {
+    $('#close-sidebar').on('click', function () {
         $sidebarWrapper.removeClass('open');
     });
 
@@ -81,12 +81,12 @@
             var $content = $(document.createElement('div')).addClass('content');
             var $text = $(document.createElement('div')).addClass('text');
             var $textContent = getPartInfoText(part);
-            (function() {
+            (function () {
                 var p = part, index = i;
-                $textContent.find('button.view-more').on('click', function(e) {
+                $textContent.find('button.view-more').on('click', function (e) {
                     openDetailNav(p);
                 });
-                $textContent.find('button.do-compare').on('click', function(e) {
+                $textContent.find('button.do-compare').on('click', function (e) {
                     var alreadyexists = window.app.compare.parts.indexOf(p) !== -1;
                     window.app.compare[alreadyexists ? 'remove' : 'add'](p);
                     $(this)[alreadyexists ? 'removeClass' : 'addClass']('remove');
@@ -100,7 +100,7 @@
             part.v.image ? $content.css('background-image', 'url({{ "/assets/img/parts/med/" | absolute_url }}'
                 + escape(part.v.image) + '.png)')
                 : $content.addClass('img-not-found');
-                frag.appendChild($item[0])
+            frag.appendChild($item[0]);
         }
         $partsGrid[0].appendChild(frag);
     }
@@ -166,13 +166,13 @@
                 var name = $(this).find('.name').text();
                 return name.match(/ium$/);
             },
-            crossfeedAll: function() {
+            crossfeedAll: function () {
                 return true;
             },
-            crossfeedEnabled: function() {
+            crossfeedEnabled: function () {
                 return parseBool(parts[$.data(this, 'i')].v.fuelCrossFeed || 'True');
             },
-            crossfeedDisabled: function() {
+            crossfeedDisabled: function () {
                 return !parseBool(parts[$.data(this, 'i')].v.fuelCrossFeed || 'True');
             }
         };
@@ -189,22 +189,24 @@
 
         function refreshFilters() {
             var filterFuncs = [];
-            $('.filter-select').each(function() {
+            $('.filter-select').each(function () {
                 var filterValue = this.value;
                 // use filterFn if matches value
                 filterValue = filterFns[filterValue] || filterValue;
                 filterFuncs.push(filterValue);
             });
-            $('button.filter-control').each(function() {
+            $('button.filter-control').each(function () {
                 var filterValue = $(this).attr('data-filter');
                 // use filterFn if matches value
                 filterValue = filterFns[filterValue] || filterValue;
                 filterFuncs.push(filterValue);
             });
-            $grid.isotope({ filter: function() {
-                var _this = this;
-                return filterFuncs.every(function(func) { return func.call(_this) });
-            }});
+            $grid.isotope({
+                filter: function () {
+                    var _this = this;
+                    return filterFuncs.every(function (func) { return func.call(_this) });
+                }
+            });
         }
 
         $('.filter-select').on('change', refreshFilters);
